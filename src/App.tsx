@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { PromptInput } from './components/PromptInput';
 import { ComponentCard } from './components/ComponentCard';
+import { StreamingCard } from './components/StreamingCard';
 import { useComponentGenerator } from './hooks/useComponentGenerator';
 import type { Provider } from './types';
 import './App.css';
@@ -19,8 +20,16 @@ function App() {
     anthropic: false,
     google: false,
   });
-  const { components, isLoading, error, generate, removeComponent, clearAll } =
-    useComponentGenerator();
+  const {
+    components,
+    isLoading,
+    error,
+    streamingCode,
+    streamingPrompt,
+    generate,
+    removeComponent,
+    clearAll,
+  } = useComponentGenerator();
 
   useEffect(() => {
     fetch('/api/config')
@@ -163,10 +172,7 @@ function App() {
         )}
 
         {isLoading && (
-          <div className="loading-card">
-            <div className="loading-pulse" />
-            <p>컴포넌트를 생성하고 있습니다...</p>
-          </div>
+          <StreamingCard code={streamingCode} prompt={streamingPrompt} />
         )}
 
         <div className="results-grid">
