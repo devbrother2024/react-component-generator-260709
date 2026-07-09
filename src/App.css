@@ -487,6 +487,51 @@
   font-size: 0.95rem;
 }
 
+.streaming-card {
+  margin-bottom: 18px;
+  border-color: var(--primary);
+}
+
+.streaming-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+}
+
+.streaming-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.code-block--streaming {
+  min-height: 220px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.stream-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: #38bdf8;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .results-grid {
   display: flex;
   flex-direction: column;
