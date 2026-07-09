@@ -579,8 +579,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   padding: 13px 18px;
   border-bottom: 1px solid var(--line);
+}
+
+.viewport-toggle {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+}
+
+.viewport-btn {
+  min-height: 28px;
+  padding: 0 11px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 650;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.viewport-btn:hover {
+  color: var(--text);
+}
+
+.viewport-btn--active {
+  background: #ffffff;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.viewport-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.4);
 }
 
 .panel-header h3 {
@@ -607,6 +648,11 @@
   background-size: 28px 28px;
   border: 1px solid var(--line);
   border-radius: 8px;
+}
+
+.preview-frame {
+  width: 100%;
+  transition: max-width 0.25s ease;
 }
 
 .preview-error {
